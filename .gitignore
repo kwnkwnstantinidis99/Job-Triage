@@ -1,0 +1,15 @@
+# personal data and secrets: never commit these
+data/
+.password
+cv.txt
+seen.json
+scan.json
+extra.json
+companies.json
+
+__pycache__/
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.DS_Store

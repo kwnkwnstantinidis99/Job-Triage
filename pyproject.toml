@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "job-triage"
+version = "0.1.0"
+description = "Scan career pages, score postings against your CV, review them in a local web UI."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+scan = ["playwright>=1.40"]
+linkedin = ["requests", "beautifulsoup4"]
+dev = ["pytest>=8", "ruff>=0.5", "beautifulsoup4"]
+
+[project.scripts]
+job-triage = "job_triage.server:main"
+job-triage-scan = "job_triage.scanner:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+job_triage = ["static/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 140
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+# scoring.py keeps long one-line regexes on purpose
+per-file-ignores = { "src/job_triage/scoring.py" = ["E501"], "src/job_triage/scanner.py" = ["E501"] }
