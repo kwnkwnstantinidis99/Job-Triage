@@ -1,6 +1,6 @@
 # Job Triage
 
-[![CI](https://github.com/kwnkwnstantinidis99/job-triage/actions/workflows/ci.yml/badge.svg)](https://github.com/kwnkwnstantinidis99/job-triage/actions/workflows/ci.yml)
+[![CI](https://github.com/kwnkwnstantinidis99/Job-Triage/actions/workflows/ci.yml/badge.svg)](https://github.com/kwnkwnstantinidis99/Job-Triage/actions/workflows/ci.yml)
 
 A small tool I built for my own job search. It scans company career pages with a headless browser,
 scores each posting against my CV (skills, seniority, language), and shows the ranked results in a
